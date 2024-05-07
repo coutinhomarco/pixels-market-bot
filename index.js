@@ -2,7 +2,7 @@
     'use strict';
 
     let loop;
-    const minimumPrice = 39;
+    const minimumPrice = 51;
     const minimumBalance = 1000
     // const itemToBuy = 'Bluzzleberry Swirl Cotton Candy'
     const itemToBuy = 'Popberry'
@@ -82,9 +82,6 @@
                     numberOfPurchases += quantity;
                     sendNotification(`Purchase made, price paid: ${price}, quantity: ${quantity}`);
                     console.log(`Purchase successful\nPrice paid ${price}`);
-                    setTimeout(() => {
-                        console.log('waiting cooldown');
-                    }, 3000)
                 }
             }, 400);
             closePopups();
@@ -109,7 +106,7 @@
             setTimeout(() => {
                 const btnText = document.querySelector('.MarketplaceItemListings_buyListing__jYwuF');
                 attemptPurchase(btnText);
-            }, 1100);
+            }, 1200);
         }
         if (Number(numberOfPurchases) > 0) {
             console.log(`Average price of purchases: ${averagePrice.toFixed(2)}`);
